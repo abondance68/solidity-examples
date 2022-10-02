@@ -30,7 +30,7 @@ contract DelegateCall {
       abi.encodeWithSelector(TestDelegateCall.setVars.selector, _num)
     );
 
-    require(success, "DelgateCall failed") 
+    require(success, "DelegateCall failed") 
   }
 
   
