@@ -3,8 +3,9 @@ SPDX-License-Identifier:MIT
 
 pragma  solidity  ^0.8.13; 
 
-/*DelagateCall is a low level function similar to "Call"
+/*delagatecall is a low level function similar to "Call"
 When contract A executes "Delegecall" to contract B, B 's code is executed with contract A's storage, msg.sender & msg.value
+delegatecall can be used to upgrade contracts
 */
 contract TestDelegateCall  { 
     // NOTE: storage layout must be the same as contract B 
