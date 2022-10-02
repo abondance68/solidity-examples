@@ -27,7 +27,7 @@ contract DelegateCall {
 
   function setVars(address _test, uint _num) public payable { 
     (bool success, bytes memory data) = test.delegatecall(
-      abi.encodeWithSelctor(TestDelegateCall.setVars.selector, _num)
+      abi.encodeWithSelector(TestDelegateCall.setVars.selector, _num)
     );
 
     require(success, "DelgateCall failed") 
