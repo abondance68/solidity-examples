@@ -3,23 +3,34 @@
 pragma solidity ^0.8.10;
 
 contract ABITest { 
+  // It is possible to put a 'struct' here: 
+  struct MyStruct { 
+    string name; 
+    uint[2] numbers; 
+  }
+  
 
 
-
-  function abiEncode(uint param1, uint param2, address addr) external pure returns (bytes memory) {  
-    return abi.encode(param1, param2, addr); 
+  function abiEncode(
+    uint x ,
+    address addr,
+    uint[] calldata arr,
+    MyStruct calldata myStruct
+     ) external pure returns (bytes memory) {  
+    return abi.encode(x , addr, arr, myStruct); 
 
 
   }
 
   function abiDecode(bytes calldata data) external pure returns(
-     uint param1,
-     uint param2,
-     address addr
+     uint x,
+     address addr,
+     uint[] memory arr,
+     MyStruct memory myStruct 
      ) 
      
   { 
 
-    (param1, param2, addr) = abi.decode(data, (uint, uint, address)); 
+    (x, addr, arr, myStruct = abi.decode(data, (x , addr, arr, MyStruct)); 
   }
 }
